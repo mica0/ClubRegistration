@@ -24,25 +24,23 @@ namespace ClubRegistration
 
         private void FrmUpdateMember_Load(object sender, EventArgs e)
         {
-            Programcb.Items.Add("BS Information Technology");
-            Programcb.Items.Add("BS Computer Science");
-            Programcb.Items.Add("BS Information Systems");
-            Programcb.Items.Add("BS in Accountancy");
-            Programcb.Items.Add("BS in Hospitality Management");
-            Programcb.Items.Add("BS in Tourism Management");
-            Gendercb.Items.Add("Female");
-            Gendercb.Items.Add("Male");
+            Programcb.Items.Add ("BS Information Technology");
+            Programcb.Items.Add ("BS Computer Science");
+            Programcb.Items.Add ("BS Information Systems");
+            Programcb.Items.Add ("BS in Accountancy");
+            Programcb.Items.Add ("BS in Hospitality Management");
+            Programcb.Items.Add ("BS in Tourism Management");
+            Gendercb.Items.Add ("Female");
+            Gendercb.Items.Add ("Male");
 
             ClassRegQue = new ClubRegistrationQuery();
-            using (SqlConnection sqlConn = new SqlConnection(ClassRegQue.connectionString))
-            {
+            using (SqlConnection sqlConn = new SqlConnection(ClassRegQue.connectionString)) { 
                 sqlConn.Open();
                 string query = "SELECT StudentId From ClubMembers";
-                cmd = new SqlCommand(query, sqlConn);
-                rdr = cmd.ExecuteReader();
+                cmd = new SqlCommand (query, sqlConn);
+                rdr = cmd.ExecuteReader ();
 
-                while (rdr.Read())
-                {
+                while (rdr.Read()) {
                     IDcb.Items.Add(rdr.GetValue(0));
                 }
                 rdr.Close();
@@ -58,11 +56,11 @@ namespace ClubRegistration
             ClassRegQue = new ClubRegistrationQuery();
 
             using (SqlConnection sqlConn = new SqlConnection(ClassRegQue.connectionString))
-            {
+            { 
                 sqlConn.Open();
                 string query = "SELECT * FROM ClubMembers WHERE StudentID = '" + value + "'";
-                cmd = new SqlCommand(query, sqlConn);
-                rdr = cmd.ExecuteReader();
+                cmd = new SqlCommand (query, sqlConn);
+                rdr = cmd.ExecuteReader ();
 
                 while (rdr.Read())
                 {
@@ -75,7 +73,7 @@ namespace ClubRegistration
                 }
                 rdr.Close();
                 sqlConn.Close();
-
+            
             }
         }
 
@@ -84,10 +82,10 @@ namespace ClubRegistration
             ClassRegQue = new ClubRegistrationQuery();
 
             using (SqlConnection sqlConn = new SqlConnection(ClassRegQue.connectionString))
-            {
+            { 
                 sqlConn.Open();
-                string updateQuery = "UPDATE ClubMembers SET FistName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Age = @Age, Gender = @Gender, Program = @Program WHERE StudentId = '" + value + "'";
-                cmd = new SqlCommand(updateQuery, sqlConn);
+                string updateQuery = "UPDATE ClubMembers SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Age = @Age, Gender = @Gender, Program = @Program WHERE StudentId = '" + value + "'";
+                cmd = new SqlCommand (updateQuery, sqlConn);
                 cmd.Parameters.AddWithValue("@FirstName", txtFirst.Text);
                 cmd.Parameters.AddWithValue("@MiddleName", txtMiddle.Text);
                 cmd.Parameters.AddWithValue("@LastName", txtLast.Text);
@@ -95,7 +93,9 @@ namespace ClubRegistration
                 cmd.Parameters.AddWithValue("@Gender", Gendercb.Text);
                 cmd.Parameters.AddWithValue("@Program", Programcb.Text);
                 cmd.ExecuteNonQuery();
-                sqlConn.Close();
+                sqlConn.Close ();
+                this.Dispose();
+
             }
         }
     }

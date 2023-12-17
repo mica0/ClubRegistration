@@ -56,7 +56,7 @@
             this.Refreshbtn.BackColor = System.Drawing.Color.RosyBrown;
             this.Refreshbtn.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refreshbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.Refreshbtn.Location = new System.Drawing.Point(995, 386);
+            this.Refreshbtn.Location = new System.Drawing.Point(1048, 384);
             this.Refreshbtn.Name = "Refreshbtn";
             this.Refreshbtn.Size = new System.Drawing.Size(128, 42);
             this.Refreshbtn.TabIndex = 39;
@@ -69,7 +69,7 @@
             this.Updatebtn.BackColor = System.Drawing.Color.RosyBrown;
             this.Updatebtn.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updatebtn.ForeColor = System.Drawing.Color.Transparent;
-            this.Updatebtn.Location = new System.Drawing.Point(995, 110);
+            this.Updatebtn.Location = new System.Drawing.Point(1048, 108);
             this.Updatebtn.Name = "Updatebtn";
             this.Updatebtn.Size = new System.Drawing.Size(128, 42);
             this.Updatebtn.TabIndex = 38;
@@ -83,7 +83,7 @@
             this.Registerbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Registerbtn.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registerbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.Registerbtn.Location = new System.Drawing.Point(995, 62);
+            this.Registerbtn.Location = new System.Drawing.Point(1048, 60);
             this.Registerbtn.Name = "Registerbtn";
             this.Registerbtn.Size = new System.Drawing.Size(128, 42);
             this.Registerbtn.TabIndex = 37;
@@ -156,7 +156,7 @@
             this.Membersdatagrid.Name = "Membersdatagrid";
             this.Membersdatagrid.RowHeadersWidth = 51;
             this.Membersdatagrid.RowTemplate.Height = 24;
-            this.Membersdatagrid.Size = new System.Drawing.Size(925, 249);
+            this.Membersdatagrid.Size = new System.Drawing.Size(998, 249);
             this.Membersdatagrid.TabIndex = 29;
             // 
             // label9
@@ -254,7 +254,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(1150, 648);
+            this.ClientSize = new System.Drawing.Size(1623, 648);
             this.Controls.Add(this.Refreshbtn);
             this.Controls.Add(this.Updatebtn);
             this.Controls.Add(this.Registerbtn);

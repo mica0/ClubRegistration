@@ -9,3 +9,4 @@
 	[Gender] VARCHAR(50) NOT NULL,
 	[Program] VARCHAR(50) NOT NULL
 )
+

@@ -15,13 +15,17 @@ namespace ClubRegistration
         private ClubRegistrationQuery clubRegistrationQuery;
         private int ID, Age, count;
         private string FirstName, MiddleName, LastName, Gender, Program;
-        private long StudentID;
+        private long StudentId;
 
     public void RefreshListOfClubMembers() 
         {
             
                 clubRegistrationQuery.DisplayList();
+            if (Membersdatagrid != null) 
+            {
                 Membersdatagrid.DataSource = clubRegistrationQuery.bindingSource;
+            }
+               
             
         }
     private void FrmClubRegistration_Load(object sender, EventArgs e)
@@ -65,11 +69,13 @@ namespace ClubRegistration
             RefreshListOfClubMembers();
 
 
+
         }
+
         private void Registerbtn_Click(object sender, EventArgs e)
         {
-
-            StudentID = Convert.ToInt64(txtID.Text);
+            ID = RegistrationID();
+            StudentId = Convert.ToInt64(txtID.Text);
             FirstName = txtFirst.Text;
             MiddleName = txtMiddle.Text;
             LastName = txtLast.Text;
@@ -77,7 +83,8 @@ namespace ClubRegistration
             Gender = Gendercb.Text;
             Program = Programcb.Text;
 
-            clubRegistrationQuery.RegisterStudent(RegistrationID(), StudentID, FirstName, MiddleName, LastName, Age, Gender, Program);
+            clubRegistrationQuery.RegisterStudent(ID, StudentId, FirstName, MiddleName, LastName, Age, Gender, Program);
+            Clear();
             RefreshListOfClubMembers();
         }
     private void Updatebtn_Click(object sender, EventArgs e)
@@ -107,7 +114,17 @@ namespace ClubRegistration
             return count;   
         }
 
-        
-        
+        public void Clear()
+        {
+            txtID.Clear();
+            txtFirst.Clear();
+            txtMiddle.Clear();
+            txtLast.Clear();
+            txtAge.Clear();
+            Gendercb.SelectedIndex = -1;
+            Programcb.SelectedIndex = -1;
+        }
+
+
     }
 }
